@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    char* ch;   // this ch should only contain 1000 charecters
+    char* ch;   // this ch should only contain 1000 charecters // goodluck future me LOVE
     int len;
 
     scanf("%[^\n]%*c", &*ch);
@@ -21,24 +21,25 @@ int main(void)
         {
 
             char tmp = ch[i];
-            printf("%c | ", tmp);
+            //printf("%c | ", tmp);
             ch2[i] = tmp + 3;
-            printf("%c ", ch2[i]);
-            if(ch2[i] == '#')
+            //printf("%c ", ch2[i]);
+
+            if(ch2[i] == '#') // gives space in the string
             {
                 ch2[i] = ' ';
             }
 
         }
-        else
+        else // keeps any none letter in the changed string without swaping
         {
             ch2[i] = ch[i];
         }
     }
-    ch2[len] = '\0';
+    ch2[len] = '\0'; // this shit is anoying and returns garbage value if not inplimented
 
-    printf("\n--%s--\n", ch2);
-    printf("++%s++\n", ch);
+    printf("\nBefore:\n--%s--\n", ch2);
+    printf("\nAfter:\n++%s++\n", ch);
 
     free(ch2);
 }
